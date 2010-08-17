@@ -1,4 +1,4 @@
-= StringifyDate
+= StringifyDate (Gem / Rails Plugin)
 
 Based on tutorial from 
 {Ryan Bates}[http://railscasts.com/episodes/33-making-a-plugin]
@@ -10,6 +10,10 @@ Contains a collection of complex assertions.
  config.gem 'jakewendt-stringify_date',
    :lib    => 'stringify_date',
    :source => 'http://rubygems.org'
+
+== ToDo
+
+* add legitimate text to Rakefile
 
 == Attempting Gemification with Jeweler
 
