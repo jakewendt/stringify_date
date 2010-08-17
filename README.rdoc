@@ -1,12 +1,19 @@
-StringifyDate
-=============
+= StringifyDate
 
 Based on tutorial from 
 {Ryan Bates}[http://railscasts.com/episodes/33-making-a-plugin]
 
+== Attempting Gemification with Jeweler
 
-Example
-=======
+ vi Rakefile
+ rake version:write
+ rake gemspec
+ rake install
+
+ rake version:bump:major
+ rake release
+
+== Example
 
 Example goes here.
 
