@@ -24,7 +24,11 @@ module StringifyDate
 #				Chronic.parse will not raise an error to rescue from
 #	chronic actually returns a time
 						date = Chronic.parse(date_str)	
-						raise ArgumentError if date.nil?
+#Chronic.parse("February 14, 2004") # <= nil
+#						raise ArgumentError if date.nil?
+						date = Date.parse(date_str) if date.nil?
+#	if Date.parse fails, it will raise ArgumentError
+#	so I don't need to do it manually
 						write_attribute(name, date.to_date)
 					rescue ArgumentError
 						instance_variable_set("@#{name}_invalid", true)

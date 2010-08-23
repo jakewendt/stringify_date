@@ -14,8 +14,9 @@ Contains a collection of complex assertions.
 == ToDo
 
 * add legitimate text to Rakefile
+* add TESTS
 
-== Attempting Gemification with Jeweler
+== Gemified with Jeweler
 
  vi Rakefile
  rake version:write
