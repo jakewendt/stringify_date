@@ -10,11 +10,23 @@
 # stringify_date.rb
 module StringifyDate
 	def stringify_date(*names)
+		options = names.extract_options!
+
 		names.each do |name|
 			define_method "#{name}_string" do
 #				read_attribute(name).to_s(:db) unless read_attribute(name).nil?
 #	to_date added to fix sqlite3 quirk
-				read_attribute(name).to_date.to_s(:db) unless read_attribute(name).nil?
+#				read_attribute(name).to_date.to_s(:db) unless read_attribute(name).nil?
+
+				d = read_attribute(name).try(:to_date)
+				unless d.blank?
+					if options[:format]
+						d.strftime(options[:format])
+					else
+						d.to_s(:db)
+					end
+				end
+
 			end
 			
 			define_method "#{name}_string=" do |date_str|

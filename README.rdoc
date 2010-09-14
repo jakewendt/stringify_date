@@ -11,6 +11,8 @@ Contains a collection of complex assertions.
    :lib    => 'stringify_date',
    :source => 'http://rubygems.org'
 
+ stringify_date :interview_outcome_on, :format => '%m/%d/%Y'
+
 == ToDo
 
 * add legitimate text to Rakefile
